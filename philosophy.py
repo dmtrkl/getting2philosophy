@@ -59,7 +59,7 @@ def find_first_link(url):
         p = BeautifulSoup(remove_parentheses(str(paragraph)), "html.parser").p
 
         if not p.is_empty_element:
-            a_tags = p.find_all("a", recursive=True)
+            a_tags = p.find_all("a", class_=lambda x: x not in ['new'], recursive=True)
 
             for a in a_tags:
                 if not (
@@ -111,9 +111,4 @@ if __name__ == '__main__':
             break
 
         visited.append(first_link)
-        time.sleep(0.5) 
-
-
-
-
-
+        time.sleep(0.5)
