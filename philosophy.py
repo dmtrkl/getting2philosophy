@@ -5,7 +5,6 @@ import time
 import urllib
 from bs4 import BeautifulSoup
 import requests      
-import re 
 
 def remove_parentheses(string):
     """
